@@ -24,6 +24,7 @@ Reproduce Marvel App using the new features from Android Architecture Components
 #### Next Steps:
 - Change Glide for [Coil](https://github.com/coil-kt/coil) ( image loader made with Kotlin )
 - Pagging Libray for endless scroll ( part of architecture components )
+- Improvements of Clean Architecture
 - More Instrumented and Unit Tests
 
 
