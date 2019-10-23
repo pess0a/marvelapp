@@ -7,6 +7,6 @@
         android:orderInCategory="100"
         android:icon="@drawable/ic_heart_outline_24dp"
         app:showAsAction="always"
-        android:title="favorite" />
+        android:title="@string/favorite" />
 
 </menu>

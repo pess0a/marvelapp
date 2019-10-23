@@ -71,8 +71,3 @@ data class Thumbnail(
     val path: String = ""
 ) : Parcelable
 
-@Parcelize
-data class Url(
-    val type: String = "",
-    val url: String = ""
-) : Parcelable

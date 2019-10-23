@@ -1,14 +1,13 @@
 package com.pessoadev.marvelapp.presentation.characters.fragments
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pessoadev.marvelapp.R
 import com.pessoadev.marvelapp.data.model.Character
-import com.pessoadev.marvelapp.util.AppUtil
+import com.pessoadev.marvelapp.util.GlideApp
 import kotlinx.android.synthetic.main.item_character.view.*
 
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>() {
@@ -25,11 +24,9 @@ class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewH
         fun bind(character: Character) {
             itemView.textViewHeroName.text = character.name
 
-            AppUtil.loadImage(
-                context,
-                AppUtil.buildPathImage(character.thumbnail?.path, character.thumbnail?.extension),
-                itemView.imageViewHero
-            )
+            GlideApp.with(context)
+                .load("${character.thumbnail?.path}.${character.thumbnail?.extension}")
+                .into(itemView.imageViewHero)
 
             itemView.checkBoxFavorite.isChecked = character.isFavorite
 

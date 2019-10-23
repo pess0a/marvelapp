@@ -12,8 +12,7 @@ import com.pessoadev.marvelapp.util.Converters
     Converters.ComicsConverter::class,
     Converters.StoriesConverter::class,
     Converters.EventsConverter::class,
-    Converters.ThumbnailConverter::class,
-    Converters.UrlConverter::class
+    Converters.ThumbnailConverter::class
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDao

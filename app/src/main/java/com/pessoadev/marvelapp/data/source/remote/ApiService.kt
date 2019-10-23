@@ -25,10 +25,4 @@ interface ApiService {
         @Path("characterId") characterId: String
     ): SerieResponse
 
-    @GET("/v1/public/characters/{characterId}/series")
-    suspend fun getSeriesById(
-        @Path("characterId") characterId: String,
-        @Query("limit") limit: Int,
-        @Query("offset") offset: Int
-    ): CharactersResponse
 }

@@ -76,18 +76,4 @@ object Converters  {
             return Gson().toJson(obj, type)
         }
     }
-
-    class UrlConverter {
-        @TypeConverter
-        fun toObject(json: String): ArrayList<Url> {
-            val type = object : TypeToken<ArrayList<Url>>() {}.type
-            return Gson().fromJson(json, type)
-        }
-
-        @TypeConverter
-        fun toJson(obj: ArrayList<Url>): String {
-            val type = object: TypeToken<ArrayList<Url>>() {}.type
-            return Gson().toJson(obj, type)
-        }
-    }
 }

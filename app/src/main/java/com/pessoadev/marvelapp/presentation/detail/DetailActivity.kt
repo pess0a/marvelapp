@@ -1,7 +1,6 @@
 package com.pessoadev.marvelapp.presentation.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pessoadev.marvelapp.R
 import com.pessoadev.marvelapp.data.model.Character
-import com.pessoadev.marvelapp.util.AppUtil
+import com.pessoadev.marvelapp.util.GlideApp
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.item_character.view.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -46,11 +45,10 @@ class DetailActivity : AppCompatActivity() {
     private fun loadCharacter(character: Character) {
         textViewDescription.text = character.description
 
-        AppUtil.loadImage(
-            this,
-            AppUtil.buildPathImage(character.thumbnail?.path, character.thumbnail?.extension),
-            imageViewHero.imageViewHero
-        )
+        GlideApp.with(this)
+            .load("${character.thumbnail?.path}.${character.thumbnail?.extension}")
+            .into(imageViewHero.imageViewHero)
+
     }
 
     private fun loadRecyclersViews() {

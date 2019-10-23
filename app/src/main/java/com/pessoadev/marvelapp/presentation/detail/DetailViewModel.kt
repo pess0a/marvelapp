@@ -44,7 +44,6 @@ class DetailViewModel(private val marvelRepository: MarvelRepository) : BaseView
                             )
                         )
                     }
-
                 }
 
                 val series = marvelRepository.getSeriesByCharacterId(id)
@@ -55,7 +54,6 @@ class DetailViewModel(private val marvelRepository: MarvelRepository) : BaseView
                             it.thumbnail.path + "." + it.thumbnail.extension
                         )
                     )
-
                 }
 
                 comicsSeriesList.value = Pair(comicsListHelper, seriesListHelper)

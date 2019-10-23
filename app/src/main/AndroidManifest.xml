@@ -10,14 +10,15 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".presentation.detail.DetailActivity" />
-        <activity android:name=".presentation.characters.CharactersActivity"
-            android:parentActivityName=".presentation.detail.DetailActivity" >
+        <activity
+            android:name=".presentation.characters.CharactersActivity"
+            android:parentActivityName=".presentation.detail.DetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

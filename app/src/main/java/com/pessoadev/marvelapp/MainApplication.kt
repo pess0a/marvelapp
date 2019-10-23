@@ -1,7 +1,7 @@
 package com.pessoadev.marvelapp
 
 import android.app.Application
-import androidx.multidex.MultiDex
+//import androidx.multidex.MultiDex
 import com.pessoadev.marvelapp.di.module.AppModule
 import com.pessoadev.marvelapp.di.module.NetworkModule
 import com.pessoadev.marvelapp.di.module.dbModule
@@ -15,7 +15,7 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        MultiDex.install(this)
+//        MultiDex.install(this)
 
         startKoin {
             androidLogger()
