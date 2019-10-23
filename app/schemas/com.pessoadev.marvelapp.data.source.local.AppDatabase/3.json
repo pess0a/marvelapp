@@ -1,0 +1,148 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "45bbe67bdb958e97b4ae541d811d63bc",
+    "entities": [
+      {
+        "tableName": "characters_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`description` TEXT NOT NULL, `id` TEXT NOT NULL, `modified` TEXT NOT NULL, `name` TEXT NOT NULL, `resourceURI` TEXT NOT NULL, `isFavorite` INTEGER NOT NULL, `available` TEXT, `collectionURI` TEXT, `returned` TEXT, `availableEvents` TEXT, `collectionURI1` TEXT, `returned1` TEXT, `availableSeries` TEXT, `collectionURI2` TEXT, `returned2` TEXT, `availableStories` TEXT, `collectionURI3` TEXT, `returned3` TEXT, `extension` TEXT, `path` TEXT, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "modified",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resourceURI",
+            "columnName": "resourceURI",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comics.available",
+            "columnName": "available",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "comics.collectionURI",
+            "columnName": "collectionURI",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "comics.returned",
+            "columnName": "returned",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "events.available",
+            "columnName": "availableEvents",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "events.collectionURI",
+            "columnName": "collectionURI1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "events.returned",
+            "columnName": "returned1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "series.available",
+            "columnName": "availableSeries",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "series.collectionURI",
+            "columnName": "collectionURI2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "series.returned",
+            "columnName": "returned2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stories.available",
+            "columnName": "availableStories",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stories.collectionURI",
+            "columnName": "collectionURI3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stories.returned",
+            "columnName": "returned3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumbnail.extension",
+            "columnName": "extension",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumbnail.path",
+            "columnName": "path",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '45bbe67bdb958e97b4ae541d811d63bc')"
+    ]
+  }
+}
